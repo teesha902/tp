@@ -33,7 +33,8 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 <img src="images/leedeen01.png" width="200px">
 
-[[github](http://github.com/leedeen01)] [[portfolio](team/leedeen01.md)]
+[[github](http://github.com/leedeen01)] 
+[[portfolio](team/leedeen01.md)]
 
 * Role: Developer
 * Responsibilities: Data
