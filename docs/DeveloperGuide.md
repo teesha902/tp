@@ -329,16 +329,25 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Non-Functional Requirements
 
-1.  Should work on any _mainstream OS_ as long as it has Java `17` or above installed.
-2.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
-3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
-
-*{More to be added}*
+1. Should work on any _mainstream OS_ as long as it has Java `17` or above installed.
+2. The system should be able to handle up to 1000 clients and their records without noticeable degradation in response time during typical usage.
+3. A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+4. The system should ensure that client data is accurate and consistent throughout its lifecycle. No data should be lost, corrupted, or incorrectly altered during normal operations or when interacting with the system.
+5. The application should provide a clean, intuitive, and user-friendly interface. It should be easy for financial advisors with varying levels of technical expertise to navigate, with minimal learning required.
+6. The system's search functionality should return relevant client and interaction data in less than 1 second, even when the database contains a significant amount of records (up to 1000 clients).
+7. The system should process and respond to common actions, such as adding, updating, or viewing clients, within 2 seconds, ensuring smooth and efficient user interactions.
+8. The system should be able to export client data in common, standard formats (e.g., CSV, Excel, JSON) to allow for easy transfer or analysis of data.
+9. The application should ensure the confidentiality and integrity of client data, employing encryption for sensitive data both in transit and at rest
+10. The system should be able to recover from unexpected failures, such as crashes or server downtime, and resume normal operation without data loss or corruption. The recovery process should complete within a reasonable time (e.g., within 5 minutes).
+11. The system should remain functional and should not crash under conditions like incorrect user inputs, unexpected data formats, or server overload. It should handle errors gracefully and provide users with meaningful error messages without interrupting the overall user experience.
 
 ### Glossary
 
 * **Mainstream OS**: Windows, Linux, Unix, MacOS
 * **Private contact detail**: A contact detail that is not meant to be shared with others
+* **Client**: An individual or organization for whom financial advisory services are provided, whose details are stored within the system.
+* **Sensitive Data**: Information that must be protected due to privacy or confidentiality requirements, including personal, financial, or identification details
+* **Interaction**: A record of any communication or engagement with a client, including meetings, calls, emails, and follow-ups
 
 --------------------------------------------------------------------------------------------------------------------
 
