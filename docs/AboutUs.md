@@ -51,7 +51,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 ### Nithvin Leelakrishnan
 
-<img src="images/NightlyAffair.png" width="200px">
+<img src="images/nightlyaffair.png" width="200px">
 
 [[github](http://github.com/nightlyaffair)]
 [[portfolio](team/nightlyaffair.md)]
