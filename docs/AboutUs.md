@@ -1,9 +1,11 @@
 ---
-layout: page
-title: About Us
+  layout: default.md
+  title: "About Us"
 ---
 
-We are a team based in the [School of Computing, National University of Singapore](https://www.comp.nus.edu.sg).
+# About Us
+
+We are a team based in the [School of Computing, National University of Singapore](http://www.comp.nus.edu.sg).
 
 You can reach us at the email `seer[at]comp.nus.edu.sg`
 
@@ -39,22 +41,22 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 * Role: Developer
 * Responsibilities: Data
 
-### Jean Doe
+### Teesha Basak 
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/teesha902.png" width="200px">
 
-[[github](http://github.com/johndoe)]
+[[github](http://github.com/teesha902)]
 [[portfolio](team/johndoe.md)]
 
 * Role: Developer
-* Responsibilities: Dev Ops + Threading
+* Responsibilities: Documentation
 
-### James Doe
+### Nithvin Leelakrishnan
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/nightlyaffair.png" width="200px">
 
-[[github](http://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[github](http://github.com/nightlyaffair)]
+[[portfolio](team/nightlyaffair.md)]
 
 * Role: Developer
-* Responsibilities: UI
+* Responsibilities: Scheduling and tracking
