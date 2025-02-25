@@ -51,12 +51,12 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 * Role: Developer
 * Responsibilities: Documentation
 
-### James Doe
+### Nithvin Leelakrishnan
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/nightlyaffair.png" width="200px">
 
-[[github](http://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[github](http://github.com/nightlyaffair)]
+[[portfolio](team/nightlyaffair.md)]
 
 * Role: Developer
-* Responsibilities: UI
+* Responsibilities: Scheduling and tracking
