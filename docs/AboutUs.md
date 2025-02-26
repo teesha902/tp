@@ -11,16 +11,6 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 ## Project team
 
-### John Doe
-
-<img src="images/johndoe.png" width="200px">
-
-[[homepage](http://www.comp.nus.edu.sg/~damithch)]
-[[github](https://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
-
-* Role: Project Advisor
-
 ### Fabian Heng
 
 <img src="images/fabianheng.png" width="200px">
@@ -46,7 +36,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 <img src="images/teesha902.png" width="200px">
 
 [[github](http://github.com/teesha902)]
-[[portfolio](team/johndoe.md)]
+[[portfolio](team/teesha902.md)]
 
 * Role: Developer
 * Responsibilities: Documentation
