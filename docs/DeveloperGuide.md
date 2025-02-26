@@ -262,58 +262,147 @@ _{Explain here how the data archiving feature will be implemented}_
 
 **Target user profile**:
 
-* has a need to manage a significant number of contacts
-* prefer desktop apps over other types
-* can type fast
-* prefers typing to mouse interactions
-* is reasonably comfortable using CLI apps
+Target User: Alex
+* Alex is a young, fresh financial advisor (FA).
+* He recently graduated and is eager to build a strong client base.
+* He wants to grow his career by maintaining meaningful client relationships.
+* He struggles with tracking numerous client interactions and follow-ups.
+* He often forgets key touchpoints like birthdays and policy renewals.
+* He needs a system that reminds him who to contact and when to engage with clients.
+* Sometimes, he feels overwhelmed managing client relationships manually.
+* He can type fast and prefers a CLI interface over mouse inputs
 
-**Value proposition**: manage contacts faster than a typical mouse/GUI driven app
+
+**Value proposition**: Young financial advisors often struggle with managing a high volume of client interactions, making it easy to miss key follow-ups and important milestones. Keeping track of numerous touchpoints manually can feel overwhelming, leading to missed opportunities and weaker client relationships. ClientNest helps young financial advisors stay organized, manage clients more effectively, build stronger relationships, enhance trust, and focus on growing their business.
+
 
 
 ### User stories
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                                    | I want to …​                     | So that I can…​                                                        |
-| -------- | ------------------------------------------ | ------------------------------ | ---------------------------------------------------------------------- |
-| `* * *`  | new user                                   | see usage instructions         | refer to instructions when I forget how to use the App                 |
-| `* * *`  | user                                       | add a new person               |                                                                        |
-| `* * *`  | user                                       | delete a person                | remove entries that I no longer need                                   |
-| `* * *`  | user                                       | find a person by name          | locate details of persons without having to go through the entire list |
-| `* *`    | user                                       | hide private contact details   | minimize chance of someone else seeing them by accident                |
-| `*`      | user with many persons in the address book | sort persons by name           | locate a person easily                                                 |
-
-*{More to be added}*
+| Priority | As a …​                         | I want to …​                                                                                        | So that I can…​                                                                   |
+|----------|---------------------------------|-----------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
+| `* `     | young financial advisor         | be able to add clients and client details                                                           | track the clients                                                                 |
+| `* `     | young financial advisor         | view all my client interactions in one application                                                  | not miss any important follow-up opportunities                                    |
+| `* `     | young financial advisor         | be able to delete any non-current client information                                                | have an overview of only the relevant clients                                     |
+| `* `     | young financial advisor         | access usage instructions                                                                           | easily refer to them when I need help using the app                               |
+| `* *`    | young financial advisor         | be guided through the initial setup process                                                         | start using the system quickly and efficiently                                    |
+| `* * `   | young financial advisor         | access a help center or FAQ section                                                                 | quickly find answers to common questions                                          |
+| `* * `   | young financial advisor         | set and receive reminders for important client touchpoints                                          | maintain meaningful relationships with my clients                                 |
+| `* * *`  | young financial advisor         | sync ClientNest with my calendar                                                                    | manage my time and appointments more efficiently                                  |
+| `* * *`  | young financial advisor         | have the system analyze client engagement history and suggest optimal times for follow-ups          | proactively nurture relationships and never miss a chance to connect              |
+| `* * *`  | young financial advisor         | have a checklist for each client meeting                                                            | ensure all necessary points are covered and nothing is missed                     |
+| `* * *`  | young financial advisor         | categorize client interactions by type (e.g., phone call, email, in-person meeting)                 | see the variety of communication methods used and stay on top of all touchpoints  |
+| `* `     | young financial advisor         | add a detailed description to client profiles                                                       | remember important personal details about each client                             |
+| `* *`    | young financial advisor         | store links to my clients' policies                                                                 | easily access important documents and provide timely support when needed          |
+| `* *`    | intermediate financial advisor  | receive notifications for missed follow-ups                                                         | avoid letting important interactions slip through the cracks                      |
+| `* *`    | intermediate financial advisor  | track the status of each client (e.g., potential, active, dormant)                                  | prioritize my efforts and focus on high-value opportunities                       |
+| `* * *`  | intermediate financial advisor  | create a visual timeline of client interactions and goals                                           | easily track progress and plan future actions                                     |
+| `* *`    | intermediate financial advisor  | receive notifications when a client's policy is up for renewal                                      | proactively reach out to clients for reviews or updates                           |
+| `* * *`  | intermediate financial advisor  | create client engagement plans (e.g., weekly check-ins, monthly newsletters)                        | structure my interactions effectively                                             |
+| `* * *`  | intermediate financial advisor  | assign tasks related to clients (e.g., send documents, schedule meetings)                           | stay organized and accountable                                                    |
+| `* *`    | intermediate financial advisor  | search my client base by name, date of last contact, or milestone                                   | quickly find relevant information and stay on top of important interactions       |
+| `* *`    | intermediate financial advisor  | store client preferences (e.g., communication method, preferred times)                              | tailor my outreach to each client’s needs                                         |
+| `* *`    | intermediate financial advisor  | keep track of client milestones (e.g., policy anniversaries, life events)                           | celebrate and engage with them at meaningful times                                |
+| `* *`    | intermediate financial advisor  | have a history of client interactions available in the system                                       | review past conversations and provide better service                              |
+| `* * *`  | intermediate financial advisor  | easily track client satisfaction and feedback                                                       | improve my service and relationships with clients                                 |
+| `* * *`  | intermediate financial advisor  | have the system automatically log my client interactions                                            | avoid manually entering every detail and focus on building strong relationships   |
+| `* *`    | expert financial advisor        | add personal notes about clients (e.g., preferences, key conversations)                             | engage with them on a more personal level and deepen our relationship             |
+| `* * *`  | expert financial advisor        | automate the process of sending follow-up emails                                                    | avoid missing opportunities for ongoing engagement                                |
+| `* * *`  | expert financial advisor        | have the system suggest best practices for client relationship management based on the data I input | improve my approach over time and build stronger, long-lasting relationships      |
+| `* * *`  | expert financial advisor        | track my client retention rate                                                                      | assess my success in building long-term relationships                             |
+| `* * *`  | expert financial advisor        | track all my client interactions by topic (e.g., retirement, investment, insurance)                 | track ongoing discussions more effectively and address client concerns accurately |
 
 ### Use cases
 
 (For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
 
-**Use case: Delete a person**
+**Use case: View Client List Overview**
 
 **MSS**
 
-1.  User requests to list persons
-2.  AddressBook shows a list of persons
-3.  User requests to delete a specific person in the list
-4.  AddressBook deletes the person
+1. User requests to list all clients.
+2. AddressBook retrieves and displays a list of clients.
 
-    Use case ends.
+   Use case ends.
 
 **Extensions**
 
-* 2a. The list is empty.
+* 2a. Client retrieval issues.
+    * 2a1. AddressBook shows an error message.
 
-  Use case ends.
+      Use case ends.
 
-* 3a. The given index is invalid.
-
-    * 3a1. AddressBook shows an error message.
+* 2b. Deleted clients continue to show up.
+    * 2b1. AddressBook refreshes the client list and removes deleted clients.
 
       Use case resumes at step 2.
 
-*{More to be added}*
+---
+
+**Use case: Add a Client**
+
+**MSS**
+
+1. User requests to add a new client with details (name, optional fields).
+2. AddressBook validates the input fields.
+3. AddressBook adds the client to the database.
+4. AddressBook confirms the addition.
+
+   Use case ends.
+
+**Extensions**
+
+* 2a. One or more input fields are invalid.
+    * 2a1. AddressBook shows an error message:
+        * "Please input valid name" (if name is missing or invalid).
+        * "Please input valid address" (if address is invalid).
+        * "Please input valid phone number" (if phone number is invalid).
+        * "Please input valid email" (if email is invalid).
+        * "Please input valid birthday" (if birthday format is incorrect).
+        * "Please input valid premium" (if premium field is invalid).
+    * 2a2. Use case resumes at step 1.
+
+* 3a. Client already exists in the database.
+    * 3a1. AddressBook shows an error message and displays the existing client details.
+
+      Use case ends.
+
+* 3b. Database error occurs while saving the client.
+    * 3b1. AddressBook shows an error message.
+
+      Use case ends.
+
+---
+
+**Use case: Delete a Client**
+
+**MSS**
+
+1. User requests to delete a specific client by name.
+2. AddressBook validates the input.
+3. AddressBook deletes the client from the database.
+4. AddressBook confirms the deletion.
+
+   Use case ends.
+
+**Extensions**
+
+* 2a. The provided name is invalid or empty.
+    * 2a1. AddressBook shows an error message: "Please input valid name."
+
+      Use case resumes at step 1.
+
+* 3a. The client does not exist in the database.
+    * 3a1. AddressBook shows an error message: "Client not found."
+
+      Use case ends.
+
+* 3b. A database error occurs while deleting the client.
+    * 3b1. AddressBook shows an error message.
+
+      Use case ends.
 
 ### Non-Functional Requirements
 
