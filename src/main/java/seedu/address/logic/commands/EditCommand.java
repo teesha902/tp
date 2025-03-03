@@ -198,9 +198,13 @@ public class EditCommand extends Command {
             return Optional.ofNullable(address);
         }
 
-        public void setBirthday(Birthday birthday) {this.birthday = birthday;}
+        public void setBirthday(Birthday birthday) {
+            this.birthday = birthday;
+        }
 
-        public Optional<Birthday> getBirthday() {return Optional.ofNullable(birthday);}
+        public Optional<Birthday> getBirthday() {
+            return Optional.ofNullable(birthday);
+        }
 
         /**
          * Sets {@code tags} to this object's {@code tags}.
