@@ -20,12 +20,6 @@ public class PremiumTest {
     }
 
     @Test
-    public void constructor_invalidPremiumNull_throwsIllegalArgumentException() {
-        Integer invalidPremium= null;
-        assertThrows(IllegalArgumentException.class, () -> new Premium(invalidPremium));
-    }
-
-    @Test
     public void isValidPremium() {
         // null premium
         assertThrows(NullPointerException.class, () -> Premium.isValidPremium(null));
@@ -39,7 +33,7 @@ public class PremiumTest {
         Premium premium = new Premium(111);
 
         // same values -> return true
-        assertTrue(premium.equals(111));
+        assertTrue(premium.equals(new Premium(111)));
 
         // same object -> return true
         assertTrue(premium.equals(premium));

@@ -9,10 +9,7 @@ import java.util.Set;
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.StringUtil;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.person.Address;
-import seedu.address.model.person.Email;
-import seedu.address.model.person.Name;
-import seedu.address.model.person.Phone;
+import seedu.address.model.person.*;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -120,5 +117,22 @@ public class ParserUtil {
             tagSet.add(parseTag(tagName));
         }
         return tagSet;
+    }
+
+    /**
+     * Parses a {@code String string} into an {@code Integer number}.
+     * Parses {@code Integer number} into an {@code Premium}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code string} is invalid.
+     */
+    public static Premium parsePremium(String string) throws ParseException {
+        requireNonNull(string);
+        Integer number = Integer.parseInt(string.trim());
+        final Premium premium = new Premium(number);
+        if (!Premium.isValidPremium(number)) {
+            throw new ParseException(Premium.MESSAGE_CONSTRAINTS);
+        }
+        return premium;
     }
 }
