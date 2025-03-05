@@ -47,4 +47,18 @@ public class PremiumTest {
         // different values -> return false
         assertFalse(premium.equals(new Premium(222)));
     }
+
+    @Test
+    public void testToString() {
+        Premium premium = new Premium(111);
+        assertTrue(premium.toString().equals("111"));
+    }
+
+    @Test
+    public void testHashCode() {
+        Premium premium = new Premium(111);
+        Integer correctPremium = 111;
+        Integer premiumHash = correctPremium.hashCode();
+        assertTrue(premium.hashCode() == premiumHash);
+    }
 }
