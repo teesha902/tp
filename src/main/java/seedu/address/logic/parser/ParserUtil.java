@@ -129,10 +129,9 @@ public class ParserUtil {
     public static Premium parsePremium(String string) throws ParseException {
         requireNonNull(string);
         Integer number = Integer.parseInt(string.trim());
-        final Premium premium = new Premium(number);
         if (!Premium.isValidPremium(number)) {
             throw new ParseException(Premium.MESSAGE_CONSTRAINTS);
         }
-        return premium;
+        return new Premium(number);
     }
 }

@@ -104,6 +104,7 @@ class JsonAdaptedPerson {
         final Set<Tag> modelTags = new HashSet<>(personTags);
 
         final Premium modelPremium = new Premium(premium);
+
         if (premium == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Premium.class.getSimpleName()));
         }
