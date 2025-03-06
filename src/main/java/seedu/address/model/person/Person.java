@@ -25,18 +25,20 @@ public class Person {
     private final Address address;
     private final Birthday birthday;
     private final Set<Tag> tags = new HashSet<>();
+    private final Premium premium;
 
     /**
      * Every field must be present and not null.
      */
     public Person(Name name, Phone phone, Email email, Address address, Birthday birthday, Set<Tag> tags) {
-        requireAllNonNull(name, phone, email, address, birthday, tags);
+        requireAllNonNull(name, phone, email, address, birthday, premium, tags);
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.address = address;
         this.birthday = birthday;
         this.tags.addAll(tags);
+        this.premium = premium;
     }
 
     public Name getName() {
@@ -65,6 +67,10 @@ public class Person {
      */
     public Set<Tag> getTags() {
         return Collections.unmodifiableSet(tags);
+    }
+
+    public Premium getPremium() {
+        return premium;
     }
 
     /**

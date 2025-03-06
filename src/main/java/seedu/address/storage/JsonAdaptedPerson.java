@@ -16,6 +16,7 @@ import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
+import seedu.address.model.person.Premium;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -31,6 +32,7 @@ class JsonAdaptedPerson {
     private final String address;
     private final String birthday;
     private final List<JsonAdaptedTag> tags = new ArrayList<>();
+    private final Integer premium;
 
     /**
      * Constructs a {@code JsonAdaptedPerson} with the given person details.
@@ -38,7 +40,8 @@ class JsonAdaptedPerson {
     @JsonCreator
     public JsonAdaptedPerson(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
             @JsonProperty("email") String email, @JsonProperty("address") String address,
-            @JsonProperty("birthday") String birthday, @JsonProperty("tags") List<JsonAdaptedTag> tags) {
+            @JsonProperty("birthday") String birthday, @JsonProperty("premium") Integer premium,
+            @JsonProperty("tags") List<JsonAdaptedTag> tags) {
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -47,6 +50,7 @@ class JsonAdaptedPerson {
         if (tags != null) {
             this.tags.addAll(tags);
         }
+        this.premium = premium;
     }
 
     /**
@@ -61,6 +65,7 @@ class JsonAdaptedPerson {
         tags.addAll(source.getTags().stream()
                 .map(JsonAdaptedTag::new)
                 .collect(Collectors.toList()));
+        premium = source.getPremium().value;
     }
 
     /**
@@ -116,7 +121,18 @@ class JsonAdaptedPerson {
         final Birthday modelBirthday = new Birthday(birthday);
 
         final Set<Tag> modelTags = new HashSet<>(personTags);
-        return new Person(modelName, modelPhone, modelEmail, modelAddress, modelBirthday, modelTags);
+
+        if (premium == null) {
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Premium.class.getSimpleName()));
+        }
+
+        if (!Premium.isValidPremium(premium)) {
+            throw new IllegalValueException(Premium.MESSAGE_CONSTRAINTS);
+        }
+
+        final Premium modelPremium = new Premium(premium);
+
+        return new Person(modelName, modelPhone, modelEmail, modelAddress, modelBirthday, modelPremium, modelTags);
     }
 
 }

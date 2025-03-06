@@ -9,6 +9,7 @@ import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
+import seedu.address.model.person.Premium;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.util.SampleDataUtil;
 
@@ -22,6 +23,7 @@ public class PersonBuilder {
     public static final String DEFAULT_EMAIL = "amy@gmail.com";
     public static final String DEFAULT_ADDRESS = "123, Jurong West Ave 6, #08-111";
     public static final String DEFAULT_BIRTHDAY = "2002-01-01";
+    public static final Integer DEFAULT_PREMIUM = 1000;
 
     private Name name;
     private Phone phone;
@@ -29,6 +31,7 @@ public class PersonBuilder {
     private Address address;
     private Birthday birthday;
     private Set<Tag> tags;
+    private Premium premium;
 
     /**
      * Creates a {@code PersonBuilder} with the default details.
@@ -40,6 +43,7 @@ public class PersonBuilder {
         address = new Address(DEFAULT_ADDRESS);
         birthday = new Birthday(DEFAULT_BIRTHDAY);
         tags = new HashSet<>();
+        premium = new Premium(DEFAULT_PREMIUM);
     }
 
     /**
@@ -52,6 +56,7 @@ public class PersonBuilder {
         address = personToCopy.getAddress();
         birthday = personToCopy.getBirthday();
         tags = new HashSet<>(personToCopy.getTags());
+        premium = personToCopy.getPremium();
     }
 
     /**
@@ -101,9 +106,16 @@ public class PersonBuilder {
         this.birthday = new Birthday(birthday);
         return this;
     }
+    /**
+     * Sets the {@code Premium} of the {@code Person} that we are building.
+     */
+    public PersonBuilder withPremium(Integer premium) {
+        this.premium = new Premium(premium);
+        return this;
+    }
 
     public Person build() {
-        return new Person(name, phone, email, address, birthday, tags);
+        return new Person(name, phone, email, address, birthday, premium, tags);
     }
 
 }

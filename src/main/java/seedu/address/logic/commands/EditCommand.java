@@ -28,6 +28,7 @@ import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
+import seedu.address.model.person.Premium;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -104,8 +105,9 @@ public class EditCommand extends Command {
         Address updatedAddress = editPersonDescriptor.getAddress().orElse(personToEdit.getAddress());
         Birthday updatedBirthday = editPersonDescriptor.getBirthday().orElse(personToEdit.getBirthday());
         Set<Tag> updatedTags = editPersonDescriptor.getTags().orElse(personToEdit.getTags());
+        Premium updatedPremium = editPersonDescriptor.getPremium().orElse(personToEdit.getPremium());
 
-        return new Person(updatedName, updatedPhone, updatedEmail, updatedAddress, updatedBirthday, updatedTags);
+        return new Person(updatedName, updatedPhone, updatedEmail, updatedAddress, updatedBirthday, updatedPremium, updatedTags);
     }
 
     @Override
@@ -143,6 +145,7 @@ public class EditCommand extends Command {
         private Address address;
         private Birthday birthday;
         private Set<Tag> tags;
+        private Premium premium;
 
         public EditPersonDescriptor() {}
 
@@ -157,6 +160,7 @@ public class EditCommand extends Command {
             setAddress(toCopy.address);
             setBirthday(toCopy.birthday);
             setTags(toCopy.tags);
+            setPremium(toCopy.premium);
         }
 
         /**
@@ -204,6 +208,13 @@ public class EditCommand extends Command {
 
         public Optional<Birthday> getBirthday() {
             return Optional.ofNullable(birthday);
+
+        public void setPremium(Premium premium) {
+            this.premium = premium;
+        }
+
+        public Optional<Premium> getPremium() {
+            return Optional.ofNullable(premium);
         }
 
         /**
@@ -240,6 +251,7 @@ public class EditCommand extends Command {
                     && Objects.equals(email, otherEditPersonDescriptor.email)
                     && Objects.equals(address, otherEditPersonDescriptor.address)
                     && Objects.equals(birthday, otherEditPersonDescriptor.birthday)
+                    && Objects.equals(premium, otherEditPersonDescriptor.premium)
                     && Objects.equals(tags, otherEditPersonDescriptor.tags);
         }
 
@@ -252,6 +264,7 @@ public class EditCommand extends Command {
                     .add("address", address)
                     .add("birthday", birthday)
                     .add("tags", tags)
+                    .add("premium", premium)
                     .toString();
         }
     }
