@@ -208,6 +208,7 @@ public class EditCommand extends Command {
 
         public Optional<Birthday> getBirthday() {
             return Optional.ofNullable(birthday);
+        }
 
         public void setPremium(Premium premium) {
             this.premium = premium;
