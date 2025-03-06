@@ -198,10 +198,9 @@ public class AddCommandParserTest {
 
         // missing birthday prefix
         assertParseFailure(parser, NAME_DESC_BOB + PHONE_DESC_BOB + EMAIL_DESC_BOB
-                        + ADDRESS_DESC_BOB + VALID_BIRTHDAY_BOB + PREMIUM_DESC_BOB,
-                expectedMessage);
+                        + ADDRESS_DESC_BOB + VALID_BIRTHDAY_BOB + PREMIUM_DESC_BOB, expectedMessage);
       
-      // missing premium prefix
+        // missing premium prefix
         assertParseFailure(parser, NAME_DESC_BOB + PHONE_DESC_BOB + EMAIL_DESC_BOB + ADDRESS_DESC_BOB
                 + BIRTHDAY_DESC_BOB + VALID_PREMIUM_BOB, expectedMessage);
 
@@ -233,12 +232,12 @@ public class AddCommandParserTest {
                 + INVALID_ADDRESS_DESC + BIRTHDAY_DESC_BOB + PREMIUM_DESC_BOB
                 + TAG_DESC_HUSBAND + TAG_DESC_FRIEND, Address.MESSAGE_CONSTRAINTS);
       
-      // invalid birthday
+        // invalid birthday
         assertParseFailure(parser, NAME_DESC_BOB + PHONE_DESC_BOB + EMAIL_DESC_BOB + ADDRESS_DESC_BOB
                 + TAG_DESC_HUSBAND + TAG_DESC_FRIEND + INVALID_BIRTHDAY_DESC + PREMIUM_DESC_BOB,
                            Premium.MESSAGE_CONSTRAINTS);
       
-      // invalid premium
+        // invalid premium
         assertParseFailure(parser, NAME_DESC_BOB + PHONE_DESC_BOB + EMAIL_DESC_BOB + ADDRESS_DESC_BOB
                 + TAG_DESC_HUSBAND + TAG_DESC_FRIEND + BIRTHDAY_DESC_BOB + INVALID_PREMIUM_DESC,
                            Premium.MESSAGE_CONSTRAINTS);
