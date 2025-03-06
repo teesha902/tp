@@ -108,8 +108,6 @@ class JsonAdaptedPerson {
 
         final Set<Tag> modelTags = new HashSet<>(personTags);
 
-        final Premium modelPremium = new Premium(premium);
-
         if (premium == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Premium.class.getSimpleName()));
         }
@@ -117,6 +115,8 @@ class JsonAdaptedPerson {
         if (!Premium.isValidPremium(premium)) {
             throw new IllegalValueException(Premium.MESSAGE_CONSTRAINTS);
         }
+
+        final Premium modelPremium = new Premium(premium);
 
         return new Person(modelName, modelPhone, modelEmail, modelAddress, modelTags, modelPremium);
     }
